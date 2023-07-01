@@ -38,6 +38,18 @@ export default{
           <div class="card-body">
             <h4 class="card-title">{{elem.title}}</h4>
             <p class="card-text">{{elem.content}}</p>
+
+
+            <div>
+              <h5>Types</h5>
+              <span>{{ elem.types.name }}</span>
+            </div>
+            <div>
+              <h5>Technologies</h5>
+              <ul>
+                <li class="" v-for="(elem,index) in elem.technologies" :key="index">{{ elem.name }}</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -47,4 +59,5 @@ export default{
 </template>
 
 <style>
+
 </style>
