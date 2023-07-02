@@ -96,11 +96,15 @@ export default{
 
 
     </div>
+    
   </div>
 </template>
 
 <style>
 
+.fa-solid{
+    color: rgb(0,232,242);
+}
 
 li{
   list-style-type: none;

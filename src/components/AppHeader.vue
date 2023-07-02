@@ -3,11 +3,7 @@
         <nav class="navbar navbar-expand-sm" id="navbar-header">
               <div class="container">
                 <img src="/AndFer.png" alt="" srcset="" href="">
-                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <div class="collapse d-flex justify-content-end align-items-center" id="collapsibleNavId">
                     <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                         <li class="nav-item">
                             <router-link class="nav-link active" :to="{name: 'home'}" aria-current="page">Home</router-link>
@@ -41,7 +37,16 @@ export default {
 
 #navbar-header{
     background-color: rgb(0,232,242);
-    color: rgb(0,72,78);
+    color: rgb(0,42,47);
+}
+
+.nav-link{
+    font-size: 20px;
+}
+
+#collapsibleNavId .nav-link:hover {
+    background-color: rgb(0,42,47);
+    color: rgb(0,232,242);
 }
 
 img{

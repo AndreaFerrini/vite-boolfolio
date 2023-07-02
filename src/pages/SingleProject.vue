@@ -21,13 +21,16 @@ export default{
   methods: {
 
     getSingleProject(){
-        axios.get("${this.baseUrl}/api/projects/${this.$route.params.slug}").then((response) => {
-            if (response.data.success) {
+        axios.get("${this.baseUrl}/api/projects/${this.$route.params.slug}")
+            .then((response) => {
                 this.project = response.data.project;
+        }), error => {
+            if( error.response.status === 404) {
+                this.$router.push( {name: "not-found"})
             } else {
-                this.$router.push({ name: "not found" })
+            
             }
-        });
+        }
     }
    }
 }
