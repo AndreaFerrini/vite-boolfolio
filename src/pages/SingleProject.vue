@@ -31,6 +31,10 @@ export default{
             
             }
         }
+    },
+
+    goBack(){
+        this.$router.go(-1);
     }
    }
 }
@@ -49,6 +53,8 @@ export default{
             </li>
         </ul>
     </div>
+
+    <a href="" @click.prevent="goBack" class="btn btn-info">Go Back</a>
 
   </div>
 </template>
