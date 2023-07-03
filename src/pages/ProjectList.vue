@@ -20,7 +20,7 @@ export default{
   methods: {
     getProjects(projectApiPage){
 
-      axios.get("${this.baseUrl}/api/projects", {
+      axios.get(`${this.baseUrl}/api/projects`, {
         params: {
           page: projectApiPage
         }
@@ -43,7 +43,7 @@ export default{
     <div class="row">
       <div class="col-6" v-for="(elem,index) in projects" :key="index">
         <div class="card">
-          <img class="card-img-top" :src="'${baseUrl}/storage/${elem.cover_image}'" alt="Title">
+          <img class="card-img-top" :src="`${baseUrl}/storage/${elem.cover_image}`" alt="Title">
           <div class="card-body">
             <router-link>
                 <h4 class="card-title" :to="{name: 'project', params: { slug: elem.slug } }">
@@ -56,7 +56,7 @@ export default{
 
             <div>
               <h5>Types</h5>
-              <span>{{ elem.types.name }}</span>
+              <span>{{ elem.types.name}}</span>
             </div>
             <div>
               <h5>Technologies</h5>

@@ -21,7 +21,7 @@ export default{
   methods: {
 
     getSingleProject(){
-        axios.get("${this.baseUrl}/api/projects/${this.$route.params.slug}")
+        axios.get(`${this.baseUrl}/api/projects/${this.$route.params.slug}`)
             .then((response) => {
                 this.project = response.data.project;
         }), error => {
