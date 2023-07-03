@@ -1,3 +1,15 @@
+<script>
+export default {
+    name: "AppHeader", 
+    data () {
+        
+        return{
+
+        }
+    }
+}
+</script>
+
 <template>
     <div>
         <nav class="navbar navbar-expand-sm" id="navbar-header">
@@ -19,18 +31,6 @@
     
     </div>
 </template>
-
-<script>
-export default {
-    name: "AppHeader", 
-    data () {
-        
-        return{
-
-        }
-    }
-}
-</script>
 
 
 <style>

@@ -1,10 +1,3 @@
-<template>
-    <div>
-Ciao Andrea
-    
-    </div>
-</template>
-
 <script>
 export default {
     name: "AppHome", 
@@ -16,6 +9,13 @@ export default {
     }
 }
 </script>
+
+
+<template>
+
+</template>
+
+
 
 
 <style>

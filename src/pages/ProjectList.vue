@@ -39,14 +39,14 @@ export default{
 <template>
 
   <div class="container mt-3">
-    <h1 class="text-center">Ecco i miei progetti</h1>
-    <div class="row">
+    <h1 class="text-center mb-3">Ecco i miei progetti</h1>
+    <div class="row main">
       <div class="col-6" v-for="(elem,index) in projects" :key="index">
-        <div class="card">
-          <img class="card-img-top" :src="`${baseUrl}/storage/${elem.cover_image}`" alt="Title">
-          <div class="card-body">
-            <router-link>
-                <h4 class="card-title" :to="{name: 'project', params: { slug: elem.slug } }">
+        <div class="card text-center">
+          <img class="card-img-top" :src="`${baseUrl}/storage/${elem.cover_image}`" alt="Title" id="img-projects">
+          <div class="mt-2">
+            <router-link :to="{ name: 'project', params: { slug: elem.slug } }" >
+                <h4 class="card-title">
                     {{elem.title}}
                 </h4>
             </router-link>
@@ -56,7 +56,7 @@ export default{
 
             <div>
               <h5>Types</h5>
-              <span>{{ elem.types.name}}</span>
+              <span v-if="elem.type">{{ elem.type.name}}</span>
             </div>
             <div>
               <h5>Technologies</h5>
@@ -70,8 +70,8 @@ export default{
 
 
       <!-- paginazione -->
-      <nav aria-label="Page navigation">
-        <ul class="pagination">
+      <nav aria-label="Page navigation" class="mt-3" id="change-page">
+        <ul class="pagination" id="pagination-control">
           <li class="page-item">
             <a class="page-link" @click.prevent="getProjects(currentPage - 1)" href="#" aria-label="Previous">
               <span aria-hidden="true">
@@ -80,7 +80,7 @@ export default{
             </a>
           </li>
 
-          <li class="page-item active" :class="(currentPage === elem) ? 'active' : '' " aria-current="page" v-for="(elem,index) in lastPage">
+          <li class="page-item" :class="(currentPage === elem) ? 'active' : '' " aria-current="page" v-for="(elem,index) in lastPage">
             <a class="page-link" href="#" @click.prevent="getProjects(elem)">{{ elem }}</a>
           </li>
 
@@ -106,8 +106,31 @@ export default{
     color: rgb(0,232,242);
 }
 
+.card{
+    color: rgb(0,42,47);
+}
+
+#img-projects{
+    width: 100%;
+    height: 60%;
+}
+
+
+a{
+    text-decoration: none;
+    color: rgb(0,232,242);
+}
+
+ul{
+    padding-left: 0;
+}
+
 li{
   list-style-type: none;
 }
 
+.page-link{
+    color: rgb(0,232,242);
+    background-color: rgb(0,42,47);
+}
 </style>

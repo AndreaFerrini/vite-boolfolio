@@ -13,7 +13,7 @@ export default{
 
         }
     },
-  mounted(){
+    mounted(){
     console.log( this.$route );
     this.getSingleProject();
 
@@ -44,13 +44,20 @@ export default{
 
   <div class="container mt-3">
     <h1 class="text-center" v-if="project">Project Singolo: {{ project.title }}</h1>
-    <p>{{ project.content }}</p>
-    <div>
+    <p v-if="elem">{{ project.content }}</p>
+    <img class="" :src="`${baseUrl}/storage/${elem}`" alt="" id="img-projects">
+    <div class="text-center">
         <h2>Types:</h2>
         <ul>
-            <li v-for="(elem,index) in project.types" :key="index">
+            <li v-for="(elem,index) in types" :key="index">
                 {{ elem.name }}
             </li>
+        </ul>
+    </div>
+    <div class="text-center">
+        <h2>Technologies:</h2>
+        <ul>
+        <li class="" v-for="(elem,index) in technologies" :key="index">{{ elem.name }}</li>
         </ul>
     </div>
 
