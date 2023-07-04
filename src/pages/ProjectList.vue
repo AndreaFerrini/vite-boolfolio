@@ -38,15 +38,18 @@ export default{
 
 <template>
 
-  <div class="container mt-3">
+<div class="sfondo">
+
+
+  <div class="container">
     <h1 class="text-center mb-3">Ecco i miei progetti</h1>
-    <div class="row main">
-      <div class="col-6" v-for="(elem,index) in projects" :key="index">
+    <div class="row">
+      <div class="col-5 m-3" v-for="(elem,index) in projects" :key="index">
         <div class="card text-center">
           <img class="card-img-top" :src="`${baseUrl}/storage/${elem.cover_image}`" alt="Title" id="img-projects">
-          <div class="mt-2">
+          <div class="card-text">
             <router-link :to="{ name: 'project', params: { slug: elem.slug } }" >
-                <h4 class="card-title">
+                <h4 class="card-title mt-2">
                     {{elem.title}}
                 </h4>
             </router-link>
@@ -67,7 +70,6 @@ export default{
           </div>
         </div>
       </div>
-
 
       <!-- paginazione -->
       <nav aria-label="Page navigation" class="mt-3" id="change-page">
@@ -98,9 +100,15 @@ export default{
     </div>
     
   </div>
+</div>
 </template>
 
 <style>
+
+.sfondo{
+    background-color: rgb(0,42,47);
+    color: rgb(0,232,242);
+}
 
 .fa-solid{
     color: rgb(0,232,242);
@@ -110,6 +118,11 @@ export default{
     color: rgb(0,42,47);
 }
 
+.card-text{
+    color: rgb(0,42,47);
+    background-color: rgb(0,232,242);
+}
+
 #img-projects{
     width: 100%;
     height: 60%;
@@ -117,8 +130,7 @@ export default{
 
 
 a{
-    text-decoration: none;
-    color: rgb(0,232,242);
+    text-decoration: dashed;
 }
 
 ul{
