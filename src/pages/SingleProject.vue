@@ -41,20 +41,24 @@ export default{
 <template>
 
   <div class="container mt-3">
-    <h1 class="text-center" v-if="project">Project Singolo: {{ project.title }}</h1>
-    <img class="img-fluid" :src="`${baseUrl}/storage/${elem}`" alt="" id="img-projects">
+    <h1 class="text-center mb-2" v-if="project">Project Singolo: {{ project.title }}</h1>
+    <img class="img-fluid img-progetto" :src="`${baseUrl}/storage/${project.cover_image}`" alt="">
 
-
-    <a href="" @click.prevent="goBack" class="btn btn-info">Go Back</a>
-
+    <div>
+        <a href="" @click.prevent="goBack" class="btn btn-info mt-3">Go Back</a>
+    </div>
   </div>
 </template>
 
 <style>
 
-
 li{
   list-style-type: none;
+}
+
+.img-progetto{
+    width: 100%;
+    height: 100%;
 }
 
 </style>
