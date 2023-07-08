@@ -22,15 +22,13 @@ export default{
 
     getSingleProject(){
         axios.get(`${this.baseUrl}/api/projects/${this.$route.params.slug}`)
-            .then((response) => {
-                this.project = response.data.project;
-        }), error => {
-            if( error.response.status === 404) {
-                this.$router.push( {name: "not-found"})
-            } else {
-            
-            }
-        }
+        .then((res)=>{
+          if (res.data.success){
+            this.project = res.data.project;
+          } else {
+            this.$router.push({name: 'not-found'})
+          }
+        });
     },
 
     goBack(){
@@ -44,22 +42,8 @@ export default{
 
   <div class="container mt-3">
     <h1 class="text-center" v-if="project">Project Singolo: {{ project.title }}</h1>
-    <p v-if="elem">{{ project.content }}</p>
-    <img class="" :src="`${baseUrl}/storage/${elem}`" alt="" id="img-projects">
-    <div class="text-center">
-        <h2>Types:</h2>
-        <ul>
-            <li v-for="(elem,index) in types" :key="index">
-                {{ elem.name }}
-            </li>
-        </ul>
-    </div>
-    <div class="text-center">
-        <h2>Technologies:</h2>
-        <ul>
-        <li class="" v-for="(elem,index) in technologies" :key="index">{{ elem.name }}</li>
-        </ul>
-    </div>
+    <img class="img-fluid" :src="`${baseUrl}/storage/${elem}`" alt="" id="img-projects">
+
 
     <a href="" @click.prevent="goBack" class="btn btn-info">Go Back</a>
 
