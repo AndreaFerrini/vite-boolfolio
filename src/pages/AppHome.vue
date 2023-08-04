@@ -15,7 +15,7 @@ export default {
 
 <div class="sfondo">
 
-    <div class="container text-center mt-3">
+    <div class="container text-center">
         <h1>Portfolio di Andrea Ferrini</h1>
         <h2>Benvenuti nel mio portfolio</h2>
         <h3>cliccando su Blog potrai vedere alcuni progetti a cui ho lavorato</h3>

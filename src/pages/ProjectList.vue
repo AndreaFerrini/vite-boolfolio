@@ -106,7 +106,7 @@ export default{
 <style>
 
 .sfondo{
-    background-color: rgb(0,42,47);
+    background-color: rgb(0,42,47, 0.9);
     color: rgb(0,232,242);
 }
 

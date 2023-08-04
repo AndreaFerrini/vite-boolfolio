@@ -1,6 +1,7 @@
 <script>
 
-import AppHeader from "./components/AppHeader.vue"
+import AppHeader from "./components/AppHeader.vue";
+import AppFooter from "./components/AppFooter.vue";
 
 export default{
   data() {
@@ -9,7 +10,8 @@ export default{
     }
   },
   components: {
-    AppHeader
+    AppHeader,
+    AppFooter,
   },
   mounted(){
 
@@ -23,6 +25,7 @@ export default{
 <template>
   <AppHeader></AppHeader>
   <router-view></router-view>
+  <AppFooter></AppFooter>
 </template>
 
 <style>

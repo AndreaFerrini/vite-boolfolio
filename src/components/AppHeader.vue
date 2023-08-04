@@ -12,7 +12,7 @@ export default {
 
 <template>
     <div>
-        <nav class="navbar navbar-expand-sm" id="navbar-header">
+        <nav class="navbar navbar-expand-sm navbar-transparent" id="navbar-header">
               <div class="container">
                 <img src="/AndFer.png" alt="" srcset="" href="">
                 <div class="collapse d-flex justify-content-end align-items-center" id="collapsibleNavId">
