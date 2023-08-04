@@ -42,7 +42,7 @@ export default{
 
   <div class="container mt-3">
     <h1 class="text-center mb-2" v-if="project">Project Singolo: {{ project.title }}</h1>
-    <img class="img-fluid img-progetto" :src="`${baseUrl}/storage/${project.cover_image}`" alt="">
+    <img v-if="project" class="img-fluid img-progetto" :src="`${baseUrl}/storage/${project.cover_image}`" alt="">
 
     <div>
         <a href="" @click.prevent="goBack" class="btn btn-info mt-3">Go Back</a>
